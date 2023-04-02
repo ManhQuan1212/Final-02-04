@@ -1,0 +1,13 @@
+Giới thiệu : 
+Mô hình Squeeze là một kiến trúc mạng nơ-ron sử dụng trong máy học, được giới thiệu bởi D. Ciregan, U. Meier và J. Schmidhuber vào năm 2012. Mô hình này bao gồm một số lớp tích chập (convolutional layers) liên tiếp, được kết nối với nhau bằng các lớp kích hoạt phi tuyến (non-linear activation layers) như ReLU (Rectified Linear Unit).
+
+Mục đích của mô hình Squeeze là giảm số lượng tham số và tính toán trong một mạng nơ-ron, đồng thời tăng tính khả diễn giải và giảm khả năng overfitting. Cụ thể, mô hình Squeeze áp dụng một kỹ thuật gọi là "squeeze and excitation" (SSE), trong đó các kênh đặc trưng (feature channels) của lớp tích chập được "squeeze" bằng cách áp dụng một lớp pooling trung bình (average pooling), sau đó được "excite" bằng cách áp dụng một lớp kích hoạt phi tuyến. Kỹ thuật này cho phép mô hình học được các kênh đặc trưng quan trọng và giúp tối ưu hóa hiệu suất của mạng.
+
+
+
+Đây là đoạn mã Python định nghĩa mô hình SqueezeNet, một mô hình mạng nơ-ron tích chập (CNN) được giới thiệu bởi nhóm nghiên cứu của Đại học California, Berkeley vào năm 2016. SqueezeNet được thiết kế để có kích thước nhỏ gọn và độ chính xác cao, cho phép triển khai trên các thiết bị có tài nguyên hạn chế như điện thoại thông minh và đồng hồ thông minh. Mô hình được định nghĩa bằng PyTorch.
+
+Mô hình SqueezeNet được xây dựng từ các mô-đun Fire, mỗi mô-đun Fire bao gồm một lớp 1x1 convolution để giảm số kênh (squeeze layer) và sau đó là hai lớp convolution khác, một là 1x1 convolution và một là 3x3 convolution để mở rộng số kênh (expand layer).
+
+Mô hình SqueezeNet được định nghĩa với hai phiên bản khác nhau: squeezenet1_0 và squeezenet1_1. Phiên bản squeezenet1_1 có số lượng tham số ít hơn so với phiên bản squeezenet1_0 và có độ chính xác tương đương hoặc tốt hơn.
+
